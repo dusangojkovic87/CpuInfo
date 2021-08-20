@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "Popins";
+    src: url("assets/fonts/Poppins-Regular.ttf");
+}
+
+.program__heading{
+    font-family: "Popins";
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+}
+
+.cpu-info-container{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+p{
+    font-family: "Popins";
+    font-size: 0.9rem;
+}
+
+.info__label{
+    font-weight: bold;
+
+}

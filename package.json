@@ -1,0 +1,15 @@
+{
+  "name": "cpuinfo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dusan Gojkovic",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^13.1.9"
+  }
+}
