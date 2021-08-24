@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const cpuCoresNumber = document.querySelector(".cpu__cores__number");
   const cpuArch = document.querySelector(".cpu__arch");
   const ipAddress = document.querySelector(".ip__address");
- 
 
   //call os info to main
   ipcRenderer.send("getOsInfo");
@@ -42,42 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const results = [];
     for (const name of Object.keys(args)) {
       for (const net of args[name]) {
-          // Skip over non-IPv4 and internal (i.e. 127.0.0.1) addresses
-          if (net.family === 'IPv4' && !net.internal) {
-              if (!results[name]) {
-                  results[name] = [];
-              }
-              results.push(net.address);
+        // Skip over non-IPv4 and internal (i.e. 127.0.0.1) addresses
+        if (net.family === "IPv4" && !net.internal) {
+          if (!results[name]) {
+            results[name] = [];
           }
-      }
-
-     ipAddress.innerHTML = `<span class='info__label'>ip address:</span>${results[0]}`;
-  }
-   
-
-    
-
-
-    
-   /*  if (args) {
-     
-      for (const netInfoName of Object.keys(args)) {
-           networkName.innerHTML = netInfoName;
-        for (const netInfo of args[netInfoName]) {
-            let template = `
-            <li>address:${netInfo.address}</li>
-            <li>cidr:${netInfo.cidr}</li>
-            <li>family:${netInfo.family}</li>
-            <li>mac:${netInfo.mac}</li>
-            <li>netmask:${netInfo.netmask}</li>
-            `;
-            adressList.innerHTML = template;
-             
-
-            //dodaj izlistavanje net adresa
-          console.log(netInfo);
+          results.push(net.address);
         }
       }
-    } */
+
+      ipAddress.innerHTML = `<span class='info__label'>ip address:</span>${results[0]}`;
+    }
   });
 });
